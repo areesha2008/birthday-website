@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff7fb;
+color:#6b4f4f;
+overflow-x:hidden;
+position:relative;
+}
+
+/* Floating Balloons */
+.balloon{
+position:fixed;
+bottom:-150px;
+width:60px;
+height:80px;
+background:#ffc1cc;
+border-radius:50% 50% 45% 45%;
+animation:float 12s linear infinite;
+opacity:0.7;
+z-index:0;
+}
+.balloon:after{
+content:'';
+position:absolute;
+width:2px;
+height:40px;
+background:#aaa;
+left:50%;
+top:80px;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+.balloon:nth-child(1){left:10%; background:#ffd6e0; animation-duration:14s;}
+.balloon:nth-child(2){left:30%; background:#cde7ff; animation-duration:18s;}
+.balloon:nth-child(3){left:50%; background:#ffe4b5; animation-duration:16s;}
+.balloon:nth-child(4){left:70%; background:#e0bbff; animation-duration:20s;}
+.balloon:nth-child(5){left:85%; background:#b5ead7; animation-duration:22s;}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#ffeef4;
+padding:12px;
+text-align:center;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+nav a{
+text-decoration:none;
+color:#c06c84;
+margin:5px 10px;
+font-size:14px;
+font-weight:500;
+}
+
+/* Sections */
+section{
+min-height:100vh;
+padding:110px 8% 60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+z-index:1;
+}
+
+h1{font-size:clamp(32px,6vw,50px);margin-bottom:15px;color:#c06c84}
+h2{font-size:clamp(24px,5vw,36px);margin-bottom:20px;color:#b76e79}
+p{max-width:650px;font-size:clamp(14px,3.5vw,18px);line-height:1.6}
+
+/* Button */
+.btn{
+margin-top:20px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#ffc1cc,#ffe4ec);
+color:#7a4f59;
+cursor:pointer;
+box-shadow:0 4px 15px rgba(255,182,193,0.4);
+transition:0.3s;
+}
+.btn:hover{transform:scale(1.08)}
+
+/* Cards */
+.card{
+background:#ffffffcc;
+padding:15px;
+margin:10px;
+border-radius:15px;
+width:100%;
+max-width:500px;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Grid */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+width:100%;
+}
+
+/* Timer */
+#timer{
+font-size:clamp(22px,6vw,40px);
+font-weight:700;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Balloons -->
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#wishes">Wishes</a>
+<a href="#amazing">Amazing Person</a>
+<a href="#letter">Letter</a>
+<a href="#fun">Fun</a>
+<a href="#countdown">Time</a>
+<a href="#final">End</a>
+</nav>
+
+<!-- 1 HOME -->
+<section id="home">
+<h1>🎂 Happy Birthday Asad Ullah Sheikh!</h1>
+<p>Today is a celebration of someone truly amazing and unforgettable.</p>
+<button class="btn" onclick="celebrate()">Celebrate 🎉</button>
+</section>
+
+<!-- 2 WISHES -->
+<section id="wishes">
+<h2>Sweet Wishes 💌</h2>
+<div class="card">May happiness always stay with you.</div>
+<div class="card">May success follow every step you take.</div>
+<div class="card">May your smile never fade.</div>
+<div class="card">May you get married this year 😁</div>
+</section>
+
+<!-- 3 AMAZING PERSON -->
+<section id="amazing">
+<h2>Amazing Person 💖</h2>
+<div class="grid">
+    <!-- Photo 1 -->
+    <div class="card" style="padding:5px;">
+                <img src="651628148_1455237976086403_3567386638224527718_n.png" alt="Amazing Person">
+        <p style="margin-top:10px;font-weight:500;">Your personality inspires everyone.</p>
+        <p style="margin-top:5px;font-size:14px;color:#6b4f4f;">Your kindness makes life softer.</p>
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="card" style="padding:5px;">
+                <img src="652715857_26700033199602777_4179045556929366265_n.png" alt="Amazing Person">
+        <p style="margin-top:10px;font-weight:500;">Your strength speaks without words.</p>
+        <p style="margin-top:5px;font-size:14px;color:#6b4f4f;">You are rare and unforgettable.</p>
+    </div>
+</div>
+</section>
+
+<!-- 4 LETTER -->
+<section id="letter">
+<h2>A Special Letter ✨</h2>
+<p>On your special day, I just want to take a moment to remind you how truly amazing you are. You’re not just a good friend, but someone whose presence brings comfort, strength, and positivity. The way you handle life with maturity and quiet confidence is something I genuinely admire.
+
+I hope this year brings you closer to your dreams, opens new doors of success, and fills your life with moments that make you proud and happy. May you always stay strong, kind, and true to yourself — because that’s what makes you special.
+
+Thank you for being the person you are. I’m really grateful for our connection and the conversations we share.
+
+Wishing you a year full of growth, peace, laughter, and unforgettable memories.
+
+Once again, Happy Birthday! 🎉✨</p>
+</section>
+
+<!-- 5 FUN -->
+<section id="fun">
+<h2>Birthday Fun 🎈</h2>
+<div class="card">🎁 Click Celebrate again for more confetti!</div>
+<button class="btn" onclick="celebrate()">Celebrate Again 🎊</button>
+</section>
+
+<!-- 6 COUNTDOWN -->
+<section id="countdown">
+<h2>Celebration Timer ⏳</h2>
+<div id="timer"></div>
+</section>
+
+<!-- 7 FINAL -->
+<section id="final">
+<h1>Once Again Happy Birthday sir ji! 🎀</h1>
+<p>Stay blessed, stay shining always.</p>
+</section>
+
+<script>
+/* Soft Confetti On Load */
+window.onload=function(){
+confetti({
+particleCount:150,
+spread:100,
+origin:{y:0.6},
+colors:['#ffc1cc','#ffd6e0','#cde7ff','#e0bbff','#b5ead7']
+});
+}
+
+/* Fountain Confetti */
+function celebrate(){
+var duration=3*1000;
+var end=Date.now()+duration;
+(function frame(){
+confetti({
+particleCount:5,
+angle:60,
+spread:60,
+origin:{x:0,y:1},
+colors:['#ffc1cc','#ffd6e0','#cde7ff','#e0bbff','#b5ead7']
+});
+confetti({
+particleCount:5,
+angle:120,
+spread:60,
+origin:{x:1,y:1},
+colors:['#ffc1cc','#ffd6e0','#cde7ff','#e0bbff','#b5ead7']
+});
+if(Date.now()<end){
+requestAnimationFrame(frame);
+}
+}());
+}
+
+/* Timer */
+let start=new Date();
+setInterval(()=>{
+let now=new Date();
+let diff=now-start;
+let s=Math.floor(diff/1000)%60;
+let m=Math.floor(diff/1000/60)%60;
+let h=Math.floor(diff/1000/60/60);
+document.getElementById("timer").innerHTML=
+h+"h "+m+"m "+s+"s";
+},1000);
+</script>
+
+</body>
+</html>
